@@ -1,0 +1,1097 @@
+{
+ "meta": {
+  "name": "SeniorSahay scheme database",
+  "version": "1.0",
+  "built": "2026-11-04",
+  "warning": "Only records with verification 'verified' were confirmed against a government source. Everything else must be confirmed on the official site before it is relied on."
+ },
+ "schemes": [
+  {
+   "id": "pmjay_vv",
+   "category": "Senior citizens and disability",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Ayushman Vay Vandana (PM-JAY cover for age 70+)",
+   "name_te": "ఆయుష్మాన్ వయ వందన (70 ఏళ్లు పైబడినవారికి ఆరోగ్య బీమా)",
+   "dept": "National Health Authority, Ministry of Health and Family Welfare",
+   "topics": [
+    "senior",
+    "health",
+    "financial"
+   ],
+   "rules": [
+    [
+     "age_min",
+     70
+    ]
+   ],
+   "purpose_en": "Hospital treatment cover for every senior citizen aged 70 or above, whatever their income.",
+   "purpose_te": "70 ఏళ్లు పైబడిన ప్రతి వృద్ధునికి ఆదాయంతో సంబంధం లేకుండా ఆసుపత్రి చికిత్సకు ఆరోగ్య బీమా.",
+   "benefit_en": "Cashless in-patient treatment at empanelled hospitals (widely reported as up to Rs 5 lakh a year – confirm on the official site).",
+   "benefit_te": "గుర్తింపు పొందిన ఆసుపత్రుల్లో నగదు రహిత చికిత్స (సంవత్సరానికి ₹5 లక్షల వరకు అని ప్రచారంలో ఉంది – అధికారిక సైట్‌లో నిర్ధారించుకోండి).",
+   "docs": [
+    "aadhaar",
+    "mobile"
+   ],
+   "apply": [
+    "portal",
+    "csc",
+    "hospital"
+   ],
+   "apply_en": "Enrol with Aadhaar e-KYC on the Ayushman App or beneficiary.nha.gov.in. People covered by CGHS or ECHS must choose one scheme.",
+   "link": "https://pmjay.gov.in/",
+   "source": "Rajya Sabha reply PQ 267 (11 Feb 2025), rsdebate.nic.in; pmjay.gov.in",
+   "verification": "verified",
+   "last_verified": "2026-11-04",
+   "notes": "Age-only rule and Aadhaar e-KYC seen in a government reply to Parliament. The Rs 5 lakh amount and the CGHS/ECHS 'choose one scheme' rule were seen on news and FAQ pages only: confirm on pmjay.gov.in. Helpline 14555."
+  },
+  {
+   "id": "ntr_bharosa",
+   "category": "Senior citizens and disability",
+   "level": "state",
+   "state": "Andhra Pradesh",
+   "name_en": "NTR Bharosa Social Security Pension (Andhra Pradesh)",
+   "name_te": "ఎన్టీఆర్ భరోసా సామాజిక భద్రతా పింఛన్ (ఆంధ్రప్రదేశ్)",
+   "dept": "Rural Development Department / SERP, Government of Andhra Pradesh",
+   "topics": [
+    "senior",
+    "pension",
+    "financial",
+    "disability"
+   ],
+   "rules": [
+    [
+     "ap"
+    ],
+    [
+     "white_card"
+    ],
+    {
+     "any": [
+      [
+       "age_min",
+       60
+      ],
+      [
+       "disability_cert"
+      ]
+     ]
+    }
+   ],
+   "purpose_en": "Monthly pension for older people and other vulnerable groups, such as people with disabilities, in Andhra Pradesh.",
+   "purpose_te": "ఆంధ్రప్రదేశ్‌లోని వృద్ధులకు, దివ్యాంగులు వంటి ఇతర బలహీన వర్గాలకు నెలవారీ పింఛన్.",
+   "benefit_en": "Monthly pension; the amount depends on the category (news reports say Rs 4,000 for old age – confirm).",
+   "benefit_te": "నెలవారీ పింఛన్; మొత్తం వర్గాన్ని బట్టి ఉంటుంది (వృద్ధాప్యానికి ₹4,000 అని వార్తలు – నిర్ధారించుకోండి).",
+   "docs": [
+    "aadhaar",
+    "white_ration",
+    "age_proof",
+    "bank",
+    "disability",
+    "photo"
+   ],
+   "apply": [
+    "secretariat",
+    "portal"
+   ],
+   "apply_en": "",
+   "link": "https://sspensions.ap.gov.in/",
+   "source": "sspensions.ap.gov.in (About / eligibility page); GO MS 43 dated 13.06.2024 on the same site",
+   "verification": "partial",
+   "last_verified": "2026-11-04",
+   "notes": "The official site lists 'BPL family holding white ration card' as common eligibility. The age of 60, the disability condition and the amounts come from news and other third-party pages: read GO MS 43 of 13.06.2024 and the Eligibility page."
+  },
+  {
+   "id": "ignoaps",
+   "category": "Senior citizens and disability",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+   "name_te": "ఇందిరా గాంధీ జాతీయ వృద్ధాప్య పింఛన్ పథకం",
+   "dept": "Ministry of Rural Development (NSAP)",
+   "topics": [
+    "senior",
+    "pension",
+    "financial"
+   ],
+   "rules": [
+    [
+     "age_min",
+     60
+    ],
+    [
+     "low_income"
+    ]
+   ],
+   "purpose_en": "Central old-age pension for older people from families below the poverty line.",
+   "purpose_te": "పేదరిక రేఖకు దిగువన ఉన్న కుటుంబాల్లోని వృద్ధులకు కేంద్ర వృద్ధాప్య పింఛన్.",
+   "benefit_en": "Monthly pension (amount set by the central and state governments – confirm locally).",
+   "benefit_te": "నెలవారీ పింఛన్ (మొత్తం కేంద్ర, రాష్ట్ర ప్రభుత్వాలు నిర్ణయిస్తాయి – స్థానికంగా నిర్ధారించుకోండి).",
+   "docs": [
+    "aadhaar",
+    "age_proof",
+    "ration",
+    "bank",
+    "photo"
+   ],
+   "apply": [
+    "secretariat",
+    "portal"
+   ],
+   "apply_en": "",
+   "link": "https://nsap.nic.in/",
+   "source": "NSAP, Ministry of Rural Development (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. In Andhra Pradesh it may be paid together with the state pension."
+  },
+  {
+   "id": "igndps",
+   "category": "Senior citizens and disability",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Indira Gandhi National Disability Pension Scheme (IGNDPS)",
+   "name_te": "ఇందిరా గాంధీ జాతీయ దివ్యాంగుల పింఛన్ పథకం",
+   "dept": "Ministry of Rural Development (NSAP)",
+   "topics": [
+    "disability",
+    "pension",
+    "financial"
+   ],
+   "rules": [
+    [
+     "disability_cert"
+    ],
+    [
+     "low_income"
+    ],
+    [
+     "age_min",
+     18
+    ],
+    [
+     "age_max",
+     79
+    ]
+   ],
+   "purpose_en": "Central pension for adults with severe disability from families below the poverty line.",
+   "purpose_te": "పేదరిక రేఖకు దిగువన ఉన్న కుటుంబాల్లో తీవ్ర వైకల్యం ఉన్న పెద్దలకు కేంద్ర పింఛన్.",
+   "benefit_en": "Monthly pension (amount to be confirmed).",
+   "benefit_te": "నెలవారీ పింఛన్ (మొత్తం నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "disability",
+    "ration",
+    "bank",
+    "photo"
+   ],
+   "apply": [
+    "secretariat",
+    "portal"
+   ],
+   "apply_en": "",
+   "link": "https://nsap.nic.in/",
+   "source": "NSAP, Ministry of Rural Development (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. The disability level required (usually 80% or more) and the age band must be confirmed."
+  },
+  {
+   "id": "adip",
+   "category": "Senior citizens and disability",
+   "level": "central",
+   "state": "All India",
+   "name_en": "ADIP – help to buy assistive devices (wheelchairs, walkers, hearing aids)",
+   "name_te": "ADIP – సహాయక పరికరాల పథకం (వీల్‌చైర్, వాకర్, వినికిడి యంత్రాలు)",
+   "dept": "Department of Empowerment of Persons with Disabilities",
+   "topics": [
+    "disability"
+   ],
+   "rules": [
+    [
+     "disability_cert"
+    ],
+    [
+     "low_income"
+    ]
+   ],
+   "purpose_en": "Helps people with disabilities get assistive devices to move, hear and live more independently.",
+   "purpose_te": "దివ్యాంగులు నడవడానికి, వినడానికి, స్వతంత్రంగా జీవించడానికి సహాయక పరికరాలు పొందడంలో సహాయం.",
+   "benefit_en": "Free or subsidised assistive devices, often given at camps.",
+   "benefit_te": "ఉచిత లేదా రాయితీపై సహాయక పరికరాలు, తరచుగా శిబిరాల్లో ఇస్తారు.",
+   "docs": [
+    "disability",
+    "aadhaar",
+    "income",
+    "photo"
+   ],
+   "apply": [
+    "local"
+   ],
+   "apply_en": "",
+   "link": "https://disabilityaffairs.gov.in/",
+   "source": "Department of Empowerment of Persons with Disabilities (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. Income limit to be confirmed."
+  },
+  {
+   "id": "pm_kisan",
+   "category": "Farmers and agriculture",
+   "level": "central",
+   "state": "All India",
+   "name_en": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+   "name_te": "పీఎం-కిసాన్ (ప్రధాన మంత్రి కిసాన్ సమ్మాన్ నిధి)",
+   "dept": "Department of Agriculture and Farmers Welfare",
+   "topics": [
+    "farming",
+    "financial"
+   ],
+   "rules": [
+    [
+     "farmer"
+    ],
+    [
+     "land_owner"
+    ]
+   ],
+   "purpose_en": "Income support for landholding farmer families.",
+   "purpose_te": "భూమి ఉన్న రైతు కుటుంబాలకు ఆదాయ సహాయం.",
+   "benefit_en": "Rs 6,000 a year in three instalments of Rs 2,000, paid to the bank account.",
+   "benefit_te": "సంవత్సరానికి ₹6,000, ₹2,000 చొప్పున మూడు విడతలుగా బ్యాంకు ఖాతాలో జమ.",
+   "docs": [
+    "aadhaar",
+    "land",
+    "bank",
+    "mobile"
+   ],
+   "apply": [
+    "portal",
+    "csc",
+    "agri"
+   ],
+   "apply_en": "",
+   "link": "https://pmkisan.gov.in/",
+   "source": "pmkisan.gov.in FAQ (fw.pmkisan.gov.in/Documents/FAQPMKISAN.pdf)",
+   "verification": "partial",
+   "last_verified": "2026-11-04",
+   "notes": "The Rs 6,000 amount and three instalments are in the official FAQ. That FAQ also mentions a 2-hectare limit, while newer sources say all landholding families are covered: check the current guidelines and exclusion list. e-KYC is required."
+  },
+  {
+   "id": "pmfby",
+   "category": "Farmers and agriculture",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Pradhan Mantri Fasal Bima Yojana (PMFBY) – crop insurance",
+   "name_te": "ప్రధాన మంత్రి ఫసల్ బీమా యోజన (పంటల బీమా)",
+   "dept": "Department of Agriculture and Farmers Welfare",
+   "topics": [
+    "farming",
+    "insurance",
+    "financial"
+   ],
+   "rules": [
+    [
+     "farmer"
+    ]
+   ],
+   "purpose_en": "Insurance for notified crops against loss from natural causes such as heavy rain, flood, drought and pests.",
+   "purpose_te": "అధిక వర్షం, వరదలు, కరువు, చీడపీడల వంటి కారణాలతో నోటిఫై చేసిన పంటలకు నష్టం జరిగితే బీమా.",
+   "benefit_en": "Compensation for notified crop loss, if the crop was enrolled and insured in that season.",
+   "benefit_te": "ఆ సీజన్‌లో పంటను నమోదు చేసి బీమా చేయించి ఉంటే, నోటిఫై చేసిన పంట నష్టానికి పరిహారం.",
+   "docs": [
+    "aadhaar",
+    "land",
+    "bank",
+    "crop_loss"
+   ],
+   "apply": [
+    "bank",
+    "csc",
+    "agri",
+    "portal"
+   ],
+   "apply_en": "",
+   "link": "https://pmfby.gov.in/",
+   "source": "pmfby.gov.in (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. Crop damage is paid only if the crop was insured before the cut-off date. Loss must be reported within the time limit: check the deadline and helpline on the official site."
+  },
+  {
+   "id": "kcc",
+   "category": "Farmers and agriculture",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Kisan Credit Card (KCC)",
+   "name_te": "కిసాన్ క్రెడిట్ కార్డు (KCC)",
+   "dept": "Department of Agriculture and Farmers Welfare, with banks",
+   "topics": [
+    "farming",
+    "loan"
+   ],
+   "rules": [
+    [
+     "farmer"
+    ]
+   ],
+   "purpose_en": "Easy short-term credit for farmers for cultivation and related needs.",
+   "purpose_te": "సాగు మరియు సంబంధిత అవసరాలకు రైతులకు సులభమైన స్వల్పకాలిక రుణం.",
+   "benefit_en": "Crop loans on a simple card, at subsidised interest (rates set by banks and government – confirm).",
+   "benefit_te": "సులభమైన కార్డుపై పంట రుణాలు, రాయితీ వడ్డీతో (వడ్డీ రేట్లు బ్యాంకులు, ప్రభుత్వం నిర్ణయిస్తాయి – నిర్ధారించుకోండి).",
+   "docs": [
+    "aadhaar",
+    "land",
+    "bank",
+    "photo"
+   ],
+   "apply": [
+    "bank",
+    "csc"
+   ],
+   "apply_en": "",
+   "link": "https://agricoop.gov.in/",
+   "source": "Department of Agriculture and Farmers Welfare (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. The official link is the ministry home page; find the KCC page there."
+  },
+  {
+   "id": "annadata_sukhibhava",
+   "category": "Farmers and agriculture",
+   "level": "state",
+   "state": "Andhra Pradesh",
+   "name_en": "Annadata Sukhibhava (Andhra Pradesh)",
+   "name_te": "అన్నదాత సుఖీభవ (ఆంధ్రప్రదేశ్)",
+   "dept": "Agriculture Department, Government of Andhra Pradesh",
+   "topics": [
+    "farming",
+    "financial"
+   ],
+   "rules": [
+    [
+     "ap"
+    ],
+    [
+     "farmer"
+    ],
+    [
+     "land_owner"
+    ]
+   ],
+   "purpose_en": "State income support for farmer families in Andhra Pradesh, given along with the central PM-KISAN payment.",
+   "purpose_te": "ఆంధ్రప్రదేశ్ రైతు కుటుంబాలకు రాష్ట్ర ఆదాయ సహాయం, కేంద్ర పీఎం-కిసాన్ చెల్లింపుతో కలిపి ఇస్తారు.",
+   "benefit_en": "Yearly financial help for farmer families (amount to be confirmed on the official site).",
+   "benefit_te": "రైతు కుటుంబాలకు ఏటా ఆర్థిక సహాయం (మొత్తం అధికారిక సైట్‌లో నిర్ధారించుకోండి).",
+   "docs": [
+    "aadhaar",
+    "land",
+    "bank"
+   ],
+   "apply": [
+    "agri",
+    "secretariat"
+   ],
+   "apply_en": "",
+   "link": "https://apagrisnet.gov.in/",
+   "source": "AP Agriculture Department (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. Link and rules to be checked; the scheme name and amount have changed with policy."
+  },
+  {
+   "id": "pm_kmy",
+   "category": "Farmers and agriculture",
+   "level": "central",
+   "state": "All India",
+   "name_en": "PM Kisan Maandhan Yojana (pension for small farmers)",
+   "name_te": "పీఎం కిసాన్ మాన్‌ధన్ యోజన (చిన్న రైతుల పింఛన్)",
+   "dept": "Department of Agriculture and Farmers Welfare",
+   "topics": [
+    "farming",
+    "pension",
+    "financial"
+   ],
+   "rules": [
+    [
+     "farmer"
+    ],
+    [
+     "land_owner"
+    ],
+    [
+     "age_min",
+     18
+    ],
+    [
+     "age_max",
+     40
+    ]
+   ],
+   "purpose_en": "Voluntary pension scheme for small and marginal farmers who join between ages 18 and 40.",
+   "purpose_te": "18 నుండి 40 ఏళ్ల మధ్య చేరే చిన్న, సన్నకారు రైతులకు స్వచ్ఛంద పింఛన్ పథకం.",
+   "benefit_en": "Monthly pension after age 60 for those who pay small monthly contributions (amount to be confirmed).",
+   "benefit_te": "నెలవారీ చిన్న చందా చెల్లించిన వారికి 60 ఏళ్ల తర్వాత నెలవారీ పింఛన్ (మొత్తం నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "land",
+    "bank"
+   ],
+   "apply": [
+    "csc",
+    "portal"
+   ],
+   "apply_en": "",
+   "link": "https://maandhan.in/",
+   "source": "maandhan.in (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. "
+  },
+  {
+   "id": "csss",
+   "category": "Students and education",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Central Sector Scholarship for College and University Students",
+   "name_te": "కాలేజీ, విశ్వవిద్యాలయ విద్యార్థులకు కేంద్ర ప్రభుత్వ స్కాలర్‌షిప్",
+   "dept": "Department of Higher Education, Ministry of Education",
+   "topics": [
+    "education",
+    "scholarship",
+    "financial"
+   ],
+   "rules": [
+    [
+     "student"
+    ],
+    [
+     "low_income"
+    ]
+   ],
+   "purpose_en": "Scholarship for meritorious students from low-income families in degree and higher courses.",
+   "purpose_te": "తక్కువ ఆదాయ కుటుంబాల్లోని ప్రతిభావంతులైన డిగ్రీ, ఉన్నత కోర్సుల విద్యార్థులకు స్కాలర్‌షిప్.",
+   "benefit_en": "Yearly scholarship paid to the student's bank account (amount and income limit to be confirmed).",
+   "benefit_te": "విద్యార్థి బ్యాంకు ఖాతాలో ఏటా స్కాలర్‌షిప్ (మొత్తం, ఆదాయ పరిమితి నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "income",
+    "marks",
+    "bank",
+    "admission"
+   ],
+   "apply": [
+    "portal",
+    "college"
+   ],
+   "apply_en": "",
+   "link": "https://scholarships.gov.in/",
+   "source": "National Scholarship Portal (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. A class 12 merit condition also applies."
+  },
+  {
+   "id": "pm_vidyalaxmi",
+   "category": "Students and education",
+   "level": "central",
+   "state": "All India",
+   "name_en": "PM-Vidyalaxmi (education loans)",
+   "name_te": "పీఎం-విద్యాలక్ష్మి (విద్యా రుణాలు)",
+   "dept": "Department of Higher Education, Ministry of Education",
+   "topics": [
+    "education",
+    "loan"
+   ],
+   "rules": [
+    [
+     "student"
+    ]
+   ],
+   "purpose_en": "Education loans for students admitted to quality higher education institutions.",
+   "purpose_te": "నాణ్యమైన ఉన్నత విద్యా సంస్థల్లో ప్రవేశం పొందిన విద్యార్థులకు విద్యా రుణాలు.",
+   "benefit_en": "Loans without collateral up to a limit, with interest support for some families (details to be confirmed).",
+   "benefit_te": "ఒక పరిమితి వరకు తనఖా లేని రుణాలు, కొన్ని కుటుంబాలకు వడ్డీ సహాయం (వివరాలు నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "admission",
+    "marks",
+    "income",
+    "bank"
+   ],
+   "apply": [
+    "portal",
+    "bank"
+   ],
+   "apply_en": "",
+   "link": "https://pmvidyalaxmi.co.in/",
+   "source": "pmvidyalaxmi.co.in (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. "
+  },
+  {
+   "id": "aicte_pragati",
+   "category": "Students and education",
+   "level": "central",
+   "state": "All India",
+   "name_en": "AICTE Pragati Scholarship for girls in technical education",
+   "name_te": "సాంకేతిక విద్యలో బాలికలకు AICTE ప్రగతి స్కాలర్‌షిప్",
+   "dept": "AICTE, Ministry of Education",
+   "topics": [
+    "education",
+    "scholarship",
+    "financial"
+   ],
+   "rules": [
+    [
+     "student"
+    ],
+    [
+     "female"
+    ],
+    [
+     "low_income"
+    ]
+   ],
+   "purpose_en": "Scholarship for girl students in AICTE-approved technical courses from low-income families.",
+   "purpose_te": "తక్కువ ఆదాయ కుటుంబాల్లోని AICTE గుర్తింపు పొందిన సాంకేతిక కోర్సుల్లో చదివే బాలికలకు స్కాలర్‌షిప్.",
+   "benefit_en": "Yearly scholarship amount (to be confirmed).",
+   "benefit_te": "ఏటా స్కాలర్‌షిప్ మొత్తం (నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "income",
+    "admission",
+    "bank",
+    "marks"
+   ],
+   "apply": [
+    "portal",
+    "college"
+   ],
+   "apply_en": "",
+   "link": "https://scholarships.gov.in/",
+   "source": "National Scholarship Portal / AICTE (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. Check that this scheme is open for new applicants this year."
+  },
+  {
+   "id": "post_matric_sc",
+   "category": "Students and education",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Post-Matric Scholarship for Scheduled Caste students",
+   "name_te": "షెడ్యూల్డ్ కులాల విద్యార్థులకు పోస్ట్-మెట్రిక్ స్కాలర్‌షిప్",
+   "dept": "Department of Social Justice and Empowerment",
+   "topics": [
+    "education_sc",
+    "scholarship",
+    "financial"
+   ],
+   "rules": [
+    [
+     "student"
+    ],
+    [
+     "cat_sc"
+    ],
+    [
+     "low_income"
+    ]
+   ],
+   "purpose_en": "Financial help for SC students studying after class 10.",
+   "purpose_te": "10వ తరగతి తర్వాత చదివే SC విద్యార్థులకు ఆర్థిక సహాయం.",
+   "benefit_en": "Fee and maintenance support (amount and income limit to be confirmed).",
+   "benefit_te": "ఫీజు, నిర్వహణ ఖర్చుల సహాయం (మొత్తం, ఆదాయ పరిమితి నిర్ధారించుకోవాలి).",
+   "docs": [
+    "caste",
+    "income",
+    "marks",
+    "bank",
+    "admission",
+    "aadhaar"
+   ],
+   "apply": [
+    "portal",
+    "college"
+   ],
+   "apply_en": "",
+   "link": "https://scholarships.gov.in/",
+   "source": "National Scholarship Portal (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. "
+  },
+  {
+   "id": "ap_fee",
+   "category": "Students and education",
+   "level": "state",
+   "state": "Andhra Pradesh",
+   "name_en": "Post-matric scholarships and fee reimbursement (Andhra Pradesh, Jnanabhumi)",
+   "name_te": "పోస్ట్-మెట్రిక్ స్కాలర్‌షిప్‌లు, ఫీజు రీయింబర్స్‌మెంట్ (ఆంధ్రప్రదేశ్, జ్ఞానభూమి)",
+   "dept": "Welfare departments, Government of Andhra Pradesh",
+   "topics": [
+    "education",
+    "scholarship",
+    "financial"
+   ],
+   "rules": [
+    [
+     "ap"
+    ],
+    [
+     "student"
+    ],
+    [
+     "low_income"
+    ]
+   ],
+   "purpose_en": "Help with college fees for eligible students in Andhra Pradesh, depending on category and family income.",
+   "purpose_te": "కేటగిరీ, కుటుంబ ఆదాయాన్ని బట్టి ఆంధ్రప్రదేశ్‌లోని అర్హులైన విద్యార్థులకు కాలేజీ ఫీజుల సహాయం.",
+   "benefit_en": "Fee reimbursement or scholarship for eligible students (rules vary by category – confirm).",
+   "benefit_te": "అర్హులైన విద్యార్థులకు ఫీజు రీయింబర్స్‌మెంట్ లేదా స్కాలర్‌షిప్ (కేటగిరీని బట్టి నిబంధనలు మారుతాయి – నిర్ధారించుకోండి).",
+   "docs": [
+    "aadhaar",
+    "income",
+    "caste",
+    "marks",
+    "admission",
+    "bank",
+    "white_ration"
+   ],
+   "apply": [
+    "portal",
+    "college"
+   ],
+   "apply_en": "",
+   "link": "https://jnanabhumi.ap.gov.in/",
+   "source": "AP Jnanabhumi portal (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. Scheme names have changed over the years: confirm the current name and rules."
+  },
+  {
+   "id": "pmmy",
+   "category": "Women and employment",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Pradhan Mantri MUDRA Yojana (PMMY)",
+   "name_te": "ప్రధాన మంత్రి ముద్రా యోజన",
+   "dept": "Ministry of Finance, with banks",
+   "topics": [
+    "business",
+    "loan",
+    "employment"
+   ],
+   "rules": [
+    [
+     "age_min",
+     18
+    ]
+   ],
+   "purpose_en": "Loans without collateral for small non-farm businesses, including women entrepreneurs.",
+   "purpose_te": "చిన్న వ్యవసాయేతర వ్యాపారాలకు, మహిళా వ్యాపారవేత్తలతో సహా, తనఖా లేని రుణాలు.",
+   "benefit_en": "Small business loans in Shishu, Kishor and Tarun categories (limits to be confirmed).",
+   "benefit_te": "శిశు, కిశోర్, తరుణ్ వర్గాల్లో చిన్న వ్యాపార రుణాలు (పరిమితులు నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "project",
+    "bank",
+    "photo",
+    "residence"
+   ],
+   "apply": [
+    "bank",
+    "portal"
+   ],
+   "apply_en": "",
+   "link": "https://www.mudra.org.in/",
+   "source": "mudra.org.in (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. "
+  },
+  {
+   "id": "stand_up",
+   "category": "Women and employment",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Stand-Up India",
+   "name_te": "స్టాండ్-అప్ ఇండియా",
+   "dept": "Ministry of Finance, with banks",
+   "topics": [
+    "business",
+    "loan"
+   ],
+   "rules": [
+    [
+     "age_min",
+     18
+    ],
+    {
+     "any": [
+      [
+       "female"
+      ],
+      [
+       "cat_sc_st"
+      ]
+     ]
+    }
+   ],
+   "purpose_en": "Bank loans for first-time entrepreneurs who are women or from SC/ST communities to start a new business.",
+   "purpose_te": "కొత్త వ్యాపారం ప్రారంభించే మహిళలు లేదా SC/ST వర్గాల మొదటిసారి వ్యాపారవేత్తలకు బ్యాంకు రుణాలు.",
+   "benefit_en": "Bank loan for a new business in manufacturing, services or trading (range to be confirmed).",
+   "benefit_te": "తయారీ, సేవలు లేదా వాణిజ్యంలో కొత్త వ్యాపారానికి బ్యాంకు రుణం (పరిధి నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "project",
+    "caste",
+    "bank",
+    "photo"
+   ],
+   "apply": [
+    "portal",
+    "bank"
+   ],
+   "apply_en": "",
+   "link": "https://www.standupmitra.in/",
+   "source": "standupmitra.in (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. "
+  },
+  {
+   "id": "pmegp",
+   "category": "Women and employment",
+   "level": "central",
+   "state": "All India",
+   "name_en": "PMEGP (Prime Minister's Employment Generation Programme)",
+   "name_te": "పీఎంఈజీపీ (ప్రధాన మంత్రి ఉపాధి కల్పన కార్యక్రమం)",
+   "dept": "Ministry of MSME (KVIC)",
+   "topics": [
+    "business",
+    "loan",
+    "employment"
+   ],
+   "rules": [
+    [
+     "age_min",
+     18
+    ]
+   ],
+   "purpose_en": "Credit-linked subsidy to help people start new micro-enterprises.",
+   "purpose_te": "కొత్త సూక్ష్మ పరిశ్రమలు ప్రారంభించేవారికి రుణంతో అనుసంధానమైన రాయితీ.",
+   "benefit_en": "Subsidy on a bank loan for a new project (rates to be confirmed).",
+   "benefit_te": "కొత్త ప్రాజెక్టుకు బ్యాంకు రుణంపై రాయితీ (శాతాలు నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "project",
+    "edu",
+    "bank",
+    "photo"
+   ],
+   "apply": [
+    "portal",
+    "bank"
+   ],
+   "apply_en": "",
+   "link": "https://www.kviconline.gov.in/pmegpeportal/",
+   "source": "KVIC PMEGP portal (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. "
+  },
+  {
+   "id": "pmkvy",
+   "category": "Women and employment",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Pradhan Mantri Kaushal Vikas Yojana (PMKVY) – skill training",
+   "name_te": "ప్రధాన మంత్రి కౌశల్ వికాస్ యోజన (నైపుణ్య శిక్షణ)",
+   "dept": "Ministry of Skill Development and Entrepreneurship",
+   "topics": [
+    "skill",
+    "employment"
+   ],
+   "rules": [
+    [
+     "age_min",
+     15
+    ],
+    [
+     "age_max",
+     45
+    ]
+   ],
+   "purpose_en": "Short skill-training courses to help young people get jobs or start their own work.",
+   "purpose_te": "యువతకు ఉద్యోగం లేదా స్వయం ఉపాధి పొందడానికి స్వల్పకాలిక నైపుణ్య శిక్షణ కోర్సులు.",
+   "benefit_en": "Free or subsidised training with an assessment and certificate (availability varies).",
+   "benefit_te": "మూల్యాంకనం, సర్టిఫికెట్‌తో ఉచిత లేదా రాయితీ శిక్షణ (లభ్యత మారుతుంది).",
+   "docs": [
+    "aadhaar",
+    "edu",
+    "bank",
+    "photo"
+   ],
+   "apply": [
+    "portal",
+    "local"
+   ],
+   "apply_en": "",
+   "link": "https://www.skillindiadigital.gov.in/",
+   "source": "Skill India Digital Hub (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. The scheme runs in phases: check that training centres near you are active."
+  },
+  {
+   "id": "mgnrega",
+   "category": "Women and employment",
+   "level": "central",
+   "state": "All India",
+   "name_en": "MGNREGA (rural wage employment)",
+   "name_te": "మహాత్మా గాంధీ ఉపాధి హామీ పథకం (MGNREGA)",
+   "dept": "Ministry of Rural Development",
+   "topics": [
+    "employment",
+    "financial"
+   ],
+   "rules": [
+    [
+     "rural"
+    ],
+    [
+     "age_min",
+     18
+    ]
+   ],
+   "purpose_en": "Guaranteed paid work for rural households whose adult members are willing to do unskilled manual work.",
+   "purpose_te": "నైపుణ్యం అవసరం లేని శారీరక పని చేయడానికి సిద్ధంగా ఉన్న గ్రామీణ కుటుంబాల పెద్దలకు హామీతో కూడిన వేతన పని.",
+   "benefit_en": "Paid work on local projects, wages paid to the bank account (days and wage rate set by law and state – confirm).",
+   "benefit_te": "స్థానిక పనుల్లో వేతనంతో కూడిన పని, వేతనం బ్యాంకు ఖాతాలో జమ (పని దినాలు, వేతనం చట్టం, రాష్ట్రం నిర్ణయిస్తాయి – నిర్ధారించుకోండి).",
+   "docs": [
+    "aadhaar",
+    "bank",
+    "photo",
+    "residence"
+   ],
+   "apply": [
+    "gp"
+   ],
+   "apply_en": "",
+   "link": "https://nrega.nic.in/",
+   "source": "nrega.nic.in (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. A newer law may have renamed or replaced this scheme: check the official site."
+  },
+  {
+   "id": "pmjay_main",
+   "category": "Low-income families and healthcare",
+   "level": "central",
+   "state": "All India",
+   "name_en": "Ayushman Bharat PM-JAY (health cover for poor families)",
+   "name_te": "ఆయుష్మాన్ భారత్ పీఎం-జేఏవై (పేద కుటుంబాలకు ఆరోగ్య బీమా)",
+   "dept": "National Health Authority",
+   "topics": [
+    "health",
+    "welfare",
+    "financial"
+   ],
+   "rules": [
+    [
+     "low_income"
+    ]
+   ],
+   "purpose_en": "Hospital treatment cover for poor and vulnerable families listed in the government's database.",
+   "purpose_te": "ప్రభుత్వ డేటాబేస్‌లో ఉన్న పేద, బలహీన కుటుంబాలకు ఆసుపత్రి చికిత్స బీమా.",
+   "benefit_en": "Cashless treatment at empanelled hospitals (widely reported as Rs 5 lakh per family a year – confirm).",
+   "benefit_te": "గుర్తింపు పొందిన ఆసుపత్రుల్లో నగదు రహిత చికిత్స (కుటుంబానికి ఏటా ₹5 లక్షలు అని ప్రచారంలో ఉంది – నిర్ధారించుకోండి).",
+   "docs": [
+    "aadhaar",
+    "ration",
+    "mobile"
+   ],
+   "apply": [
+    "portal",
+    "csc",
+    "hospital"
+   ],
+   "apply_en": "",
+   "link": "https://pmjay.gov.in/",
+   "source": "pmjay.gov.in (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. Coverage depends on whether the family is on the official list; in Andhra Pradesh it may run with the state scheme."
+  },
+  {
+   "id": "ntr_vaidya",
+   "category": "Low-income families and healthcare",
+   "level": "state",
+   "state": "Andhra Pradesh",
+   "name_en": "Dr. NTR Vaidya Seva (Andhra Pradesh health scheme)",
+   "name_te": "డా. ఎన్టీఆర్ వైద్య సేవ (ఆంధ్రప్రదేశ్ ఆరోగ్య పథకం)",
+   "dept": "Dr. NTR Vaidya Seva Trust, Government of Andhra Pradesh",
+   "topics": [
+    "health",
+    "welfare"
+   ],
+   "rules": [
+    [
+     "ap"
+    ],
+    [
+     "white_card"
+    ]
+   ],
+   "purpose_en": "State health scheme for treatment of serious illnesses for eligible families in Andhra Pradesh.",
+   "purpose_te": "ఆంధ్రప్రదేశ్‌లోని అర్హ కుటుంబాలకు తీవ్ర అనారోగ్యాల చికిత్స కోసం రాష్ట్ర ఆరోగ్య పథకం.",
+   "benefit_en": "Cashless treatment at network hospitals (cover limit to be confirmed).",
+   "benefit_te": "నెట్‌వర్క్ ఆసుపత్రుల్లో నగదు రహిత చికిత్స (పరిమితి నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "white_ration",
+    "mobile"
+   ],
+   "apply": [
+    "hospital",
+    "secretariat"
+   ],
+   "apply_en": "",
+   "link": "https://ntrvaidyaseva.ap.gov.in/",
+   "source": "AP Dr. NTR Vaidya Seva Trust (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. The scheme name and its insurance model have been changing: confirm at the secretariat."
+  },
+  {
+   "id": "pmay_u",
+   "category": "Low-income families and healthcare",
+   "level": "central",
+   "state": "All India",
+   "name_en": "PM Awas Yojana – Urban (PMAY-U 2.0)",
+   "name_te": "ప్రధాన మంత్రి ఆవాస్ యోజన – పట్టణం (PMAY-U 2.0)",
+   "dept": "Ministry of Housing and Urban Affairs",
+   "topics": [
+    "housing",
+    "welfare"
+   ],
+   "rules": [
+    [
+     "urban"
+    ],
+    [
+     "low_income"
+    ],
+    [
+     "no_house"
+    ]
+   ],
+   "purpose_en": "Help for urban low-income families to build or buy a home.",
+   "purpose_te": "పట్టణాల్లోని తక్కువ ఆదాయ కుటుంబాలు ఇల్లు కట్టుకోవడానికి లేదా కొనడానికి సహాయం.",
+   "benefit_en": "Financial assistance for house construction or purchase (amount to be confirmed).",
+   "benefit_te": "ఇల్లు కట్టడానికి లేదా కొనడానికి ఆర్థిక సహాయం (మొత్తం నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "income",
+    "site",
+    "bank",
+    "photo"
+   ],
+   "apply": [
+    "local",
+    "portal"
+   ],
+   "apply_en": "",
+   "link": "https://pmay-urban.gov.in/",
+   "source": "pmay-urban.gov.in (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. "
+  },
+  {
+   "id": "pmay_g",
+   "category": "Low-income families and healthcare",
+   "level": "central",
+   "state": "All India",
+   "name_en": "PM Awas Yojana – Gramin (PMAY-G)",
+   "name_te": "ప్రధాన మంత్రి ఆవాస్ యోజన – గ్రామీణ (PMAY-G)",
+   "dept": "Ministry of Rural Development",
+   "topics": [
+    "housing",
+    "welfare"
+   ],
+   "rules": [
+    [
+     "rural"
+    ],
+    [
+     "low_income"
+    ],
+    [
+     "no_house"
+    ]
+   ],
+   "purpose_en": "Help for rural families without a pucca house to get a house.",
+   "purpose_te": "పక్కా ఇల్లు లేని గ్రామీణ కుటుంబాలకు ఇల్లు పొందడానికి సహాయం.",
+   "benefit_en": "Financial assistance to build a house (amount to be confirmed).",
+   "benefit_te": "ఇల్లు కట్టుకోవడానికి ఆర్థిక సహాయం (మొత్తం నిర్ధారించుకోవాలి).",
+   "docs": [
+    "aadhaar",
+    "bank",
+    "site",
+    "ration",
+    "photo"
+   ],
+   "apply": [
+    "gp",
+    "secretariat"
+   ],
+   "apply_en": "",
+   "link": "https://pmayg.nic.in/",
+   "source": "pmayg.nic.in (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. Beneficiaries are usually picked from an official list: ask your Gram Panchayat."
+  },
+  {
+   "id": "nfsa",
+   "category": "Low-income families and healthcare",
+   "level": "central",
+   "state": "All India",
+   "name_en": "National Food Security Act – subsidised foodgrains (ration card)",
+   "name_te": "జాతీయ ఆహార భద్రతా చట్టం – రాయితీ ఆహార ధాన్యాలు (రేషన్ కార్డు)",
+   "dept": "Department of Food and Public Distribution",
+   "topics": [
+    "food",
+    "welfare"
+   ],
+   "rules": [
+    [
+     "low_income"
+    ]
+   ],
+   "purpose_en": "Subsidised foodgrains through ration shops for eligible households.",
+   "purpose_te": "అర్హ కుటుంబాలకు రేషన్ దుకాణాల ద్వారా రాయితీ ఆహార ధాన్యాలు.",
+   "benefit_en": "Monthly foodgrain entitlement at low or no cost (quantity set by the state – confirm).",
+   "benefit_te": "తక్కువ ధరకు లేదా ఉచితంగా నెలవారీ ఆహార ధాన్యాలు (పరిమాణం రాష్ట్రం నిర్ణయిస్తుంది – నిర్ధారించుకోండి).",
+   "docs": [
+    "aadhaar",
+    "residence",
+    "photo"
+   ],
+   "apply": [
+    "secretariat",
+    "local"
+   ],
+   "apply_en": "",
+   "link": "https://nfsa.gov.in/",
+   "source": "nfsa.gov.in (to be checked)",
+   "verification": "unverified",
+   "last_verified": null,
+   "notes": "Not yet checked on an official page; written from general knowledge. "
+  }
+ ]
+}

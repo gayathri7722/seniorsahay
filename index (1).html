@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="te">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SeniorSahay – సీనియర్ సహాయ్</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Telugu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--saf:#E67300;--grn:#0F6B06;--bg:#FFFDF6;--navy:#12294A;--mint:#E8F4EA;--cream:#FFF1DC;--red:#B3261E}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--navy);font:400 20px/1.55 "Noto Sans Telugu",system-ui,sans-serif}
+header{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:12px 18px;border-bottom:5px solid;border-image:linear-gradient(90deg,#FF9933,#138808) 1}
+.logo{font-weight:700;font-size:22px}
+.langs{display:flex;gap:8px}
+button{font:inherit;font-weight:700;border:0;border-radius:14px;padding:12px 18px;min-height:56px;cursor:pointer}
+.lang{background:#fff;color:var(--navy);border:3px solid var(--navy);min-height:48px}
+.lang[aria-pressed=true]{background:var(--navy);color:#fff}
+.primary{background:var(--grn);color:#fff}
+.alt{background:var(--cream);color:var(--navy);border:2px solid var(--saf)}
+.wide{width:100%}
+main{max-width:760px;margin:0 auto;padding:20px 18px 150px}
+h1{font-size:32px;line-height:1.3;margin:6px 0 10px}
+h2{font-size:26px;margin:24px 0 8px}
+.sub{font-size:19px}
+.small{font-size:16px;opacity:.85}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{background:var(--cream);border:2px solid var(--saf);border-radius:999px;padding:8px 14px;font-size:17px;font-weight:400;min-height:44px;cursor:pointer;color:var(--navy)}
+.tag{background:var(--mint);border-radius:999px;padding:4px 12px;font-size:16px;display:inline-block;margin:3px 4px 3px 0}
+.bubble{background:var(--mint);border-left:8px solid var(--grn);border-radius:12px;padding:14px 18px;margin:14px 0;font-size:22px}
+.mic{width:128px;height:128px;border-radius:50%;background:var(--saf);color:#fff;font-size:48px;display:block;margin:12px auto 4px}
+.mic.rec{background:var(--red)}
+.mictxt{text-align:center;font-size:18px;margin-bottom:12px}
+textarea{width:100%;font:inherit;font-size:21px;padding:12px;border:3px solid var(--navy);border-radius:12px;min-height:110px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.row>button{flex:1;min-width:130px}
+.msg{background:var(--cream);border-radius:10px;padding:10px 14px;margin:10px 0;font-size:18px}
+.msg:empty{display:none}
+.card{border:3px solid var(--grn);background:#fff;border-radius:16px;padding:16px 18px;margin:18px 0}
+.card.more{border-color:var(--saf)}
+.card.no{border-color:#999}
+.badge{display:inline-block;background:var(--grn);color:#fff;border-radius:8px;padding:2px 10px;font-size:16px;font-weight:700}
+.card.more .badge{background:var(--saf)}.card.no .badge{background:#555}
+.card h3{font-size:24px;margin:8px 0 2px}
+.card b.h{display:block;margin-top:12px}
+ul,ol{margin:4px 0 4px 0;padding-left:26px}
+li.met::marker{content:"✔ "}li.missing::marker{content:"? "}li.unmet::marker{content:"✖ "}
+a.official{display:inline-block;background:var(--navy);color:#fff;border-radius:12px;padding:12px 18px;font-weight:700;text-decoration:none;min-height:48px}
+details summary{cursor:pointer;font-weight:700;margin-top:10px}
+.proof{font-size:14px;background:#EEF2F8;border-radius:8px;padding:6px 10px;margin:10px 0}
+.disc{font-size:15px;background:var(--navy);color:#fff;position:fixed;bottom:0;left:0;right:0;padding:10px 16px;line-height:1.4}
+.spin{display:inline-block;width:20px;height:20px;border:4px solid var(--saf);border-top-color:transparent;border-radius:50%;vertical-align:middle;margin-right:8px}
+@media (prefers-reduced-motion:no-preference){.spin{animation:s 1s linear infinite}@keyframes s{to{transform:rotate(360deg)}}.mic.rec{animation:p 1s infinite}@keyframes p{50%{transform:scale(1.06)}}}
+:focus-visible{outline:4px solid #1A56DB;outline-offset:2px}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">SeniorSahay · సీనియర్ సహాయ్</div>
+ <div class="langs" role="group" aria-label="Language / భాష">
+  <button class="lang" data-lang="te" aria-pressed="true">తెలుగు</button>
+  <button class="lang" data-lang="en" aria-pressed="false">English</button>
+ </div>
+</header>
+<main>
+ <div id="msg" class="msg" role="status" aria-live="polite"></div>
+ <section id="talk"></section>
+ <section id="out" aria-live="polite"></section>
+ <div id="proof" class="proof"></div>
+</main>
+<div class="disc" id="disc"></div>
+<script>
+const U={
+en:{title:'Tell us your situation. We will help you find government schemes that may support you.',
+ sub:'Speak or type in your own words – for example your age, where you live and what help you need. This is a free information helper.',
+ start:'Start',examples:'Examples – tap one:',
+ ex:['I am 68 years old. I had paralysis and cannot walk properly.','Heavy rain damaged my crops.','I am studying B.Tech and my family income is low.','I am a woman and want to start a small business.','I am unemployed and want skill training.','My family has low income. We need healthcare and housing help.'],
+ first:'Please tell me your situation. You can speak or type.',
+ mic:'Tap the big button, speak, then tap again to stop.',micRec:'Listening… tap again to stop.',
+ type:'Or type here',send:'Send',listen:'🔊 Listen',skip:'Not sure / Skip',show:'Show schemes now',
+ heard:'Check the text below. Fix it if needed, then press Send.',understanding:'Understanding your voice…',thinking:'Finding schemes…',
+ understood:'What I understood',again:'Start again',
+ head:'Schemes that may help you',headMore:'We need a little more information for these',headNo:'Not a match for these details',
+ none:'No matching scheme was found in our database for these details. Please ask at your village or ward secretariat, or look at myscheme.gov.in. We do not guess.',
+ who:'Who it is for',ben:'Main benefits',why:'Why this scheme was suggested',elig:'Eligibility conditions',docs:'Documents you need',apply:'How to apply',
+ site:'Open official website',src:'Source',lastv:'Last verified',nov:'not verified yet',note:'Note',listenAll:'🔊 Listen to all schemes',
+ disc:'SeniorSahay is an independent information assistant, not a government website. Scheme information is provided for guidance only. Final eligibility and approval are decided by the relevant government authority.',
+ priv:'Your voice is sent to Gnani AI to turn it into text. It is not saved by this app. Please do not tell us Aadhaar, bank, OTP or password details.',
+ yes:'Yes',no:'No',lv:{central:'Central Government',state:'State Government'},
+ f:{age:'Age',AP:'Andhra Pradesh',OTHER:'Another state',farmer:'Farmer',student:'Student',unemployed:'Unemployed',female:'Woman',rural:'Village',disability_mention:'Health or disability problem',disability_cert:'Has disability certificate',low_income:'Low income',white_card:'White ration card',land_owner:'Has farm land',crop_damage:'Crop damage',own_house:'Owns a house'},
+ provN:'Voice check',pStt:'Speech-to-text (Gnani Prisma)',pTts:'Text-to-speech (Gnani Timbre)',pNo:'not used yet',pOk:'worked',
+ err:{401:'The API key is missing or wrong.',402:'No credits left on the Gnani account.',403:'This key cannot use this service.',429:'Too many requests. Please wait a few seconds.',missing_key:'The API key is not set on the server.',504:'The voice service took too long. Please try again.',NotAllowedError:'Tap the Listen button to hear the voice.'},
+ errG:'The voice service is not available. You can type instead.',noMic:'Microphone not available. Please allow the microphone or type instead.',empty:'Nothing was heard. Please try again or type.',srv:'Could not reach the server. Check your internet and try again.'},
+te:{title:'మీ పరిస్థితి చెప్పండి. మీకు ఉపయోగపడే ప్రభుత్వ పథకాలను కనుగొనడంలో సహాయం చేస్తాము.',
+ sub:'మీ మాటల్లో చెప్పండి లేదా టైప్ చేయండి – ఉదాహరణకు మీ వయస్సు, మీరు ఎక్కడ ఉంటారు, ఏ సహాయం కావాలి. ఇది ఉచిత సమాచార సహాయకుడు.',
+ start:'ప్రారంభించండి',examples:'ఉదాహరణలు – ఒకటి నొక్కండి:',
+ ex:['నా వయస్సు 68 ఏళ్లు. పక్షవాతం వచ్చింది, సరిగ్గా నడవలేను.','భారీ వర్షానికి నా పంట దెబ్బతిన్నది.','నేను బీటెక్ చదువుతున్నాను, మా కుటుంబ ఆదాయం తక్కువ.','నేను మహిళను, చిన్న వ్యాపారం ప్రారంభించాలనుకుంటున్నాను.','నాకు ఉద్యోగం లేదు, నైపుణ్య శిక్షణ కావాలి.','మా కుటుంబ ఆదాయం తక్కువ. ఆరోగ్యం, ఇల్లు సహాయం కావాలి.'],
+ first:'దయచేసి మీ పరిస్థితి చెప్పండి. మాట్లాడవచ్చు లేదా టైప్ చేయవచ్చు.',
+ mic:'పెద్ద బటన్ నొక్కి మాట్లాడండి, ఆపడానికి మళ్లీ నొక్కండి.',micRec:'వింటున్నాను… ఆపడానికి మళ్లీ నొక్కండి.',
+ type:'లేదా ఇక్కడ టైప్ చేయండి',send:'పంపండి',listen:'🔊 వినండి',skip:'తెలియదు / దాటవేయండి',show:'పథకాలను ఇప్పుడే చూపండి',
+ heard:'కింది టెక్స్ట్ చూడండి. తప్పు ఉంటే సరిచేసి, పంపండి నొక్కండి.',understanding:'మీ స్వరాన్ని అర్థం చేసుకుంటున్నాను…',thinking:'పథకాలను వెతుకుతున్నాను…',
+ understood:'నేను అర్థం చేసుకున్నది',again:'మళ్లీ మొదలుపెట్టండి',
+ head:'మీకు ఉపయోగపడే పథకాలు',headMore:'వీటికి మరికొంత సమాచారం కావాలి',headNo:'ఈ వివరాలకు సరిపోనివి',
+ none:'ఈ వివరాలకు సరిపోయే పథకం మా డేటాబేస్‌లో కనబడలేదు. దయచేసి మీ గ్రామ లేదా వార్డు సచివాలయంలో అడగండి, లేదా myscheme.gov.in చూడండి. మేము ఊహించి చెప్పము.',
+ who:'ఎవరికి',ben:'ప్రధాన ప్రయోజనాలు',why:'ఈ పథకం ఎందుకు సూచించాము',elig:'అర్హత షరతులు',docs:'కావలసిన పత్రాలు',apply:'ఎలా దరఖాస్తు చేయాలి',
+ site:'అధికారిక వెబ్‌సైట్ తెరవండి',src:'సమాచార మూలం',lastv:'చివరిగా ధృవీకరించింది',nov:'ఇంకా ధృవీకరించలేదు',note:'గమనిక',listenAll:'🔊 అన్ని పథకాలు వినండి',
+ disc:'సీనియర్‌సహాయ్ ఒక స్వతంత్ర సమాచార సహాయకుడు, ప్రభుత్వ వెబ్‌సైట్ కాదు. పథకాల సమాచారం మార్గదర్శకానికి మాత్రమే. అర్హత, ఆమోదంపై తుది నిర్ణయం సంబంధిత ప్రభుత్వ అధికారిదే.',
+ priv:'మీ స్వరం టెక్స్ట్‌గా మార్చడానికి Gnani AIకి పంపబడుతుంది. ఈ యాప్ దాన్ని సేవ్ చేయదు. ఆధార్, బ్యాంకు, OTP, పాస్‌వర్డ్ వివరాలు చెప్పవద్దు.',
+ yes:'అవును',no:'లేదు',lv:{central:'కేంద్ర ప్రభుత్వం',state:'రాష్ట్ర ప్రభుత్వం'},
+ f:{age:'వయస్సు',AP:'ఆంధ్రప్రదేశ్',OTHER:'ఇతర రాష్ట్రం',farmer:'రైతు',student:'విద్యార్థి',unemployed:'నిరుద్యోగి',female:'మహిళ',rural:'గ్రామం',disability_mention:'ఆరోగ్య లేదా వైకల్య సమస్య',disability_cert:'వైకల్య సర్టిఫికెట్ ఉంది',low_income:'తక్కువ ఆదాయం',white_card:'తెల్ల రేషన్ కార్డు',land_owner:'వ్యవసాయ భూమి ఉంది',crop_damage:'పంట నష్టం',own_house:'సొంత ఇల్లు ఉంది'},
+ provN:'వాయిస్ తనిఖీ',pStt:'స్పీచ్-టు-టెక్స్ట్ (Gnani Prisma)',pTts:'టెక్స్ట్-టు-స్పీచ్ (Gnani Timbre)',pNo:'ఇంకా వాడలేదు',pOk:'పనిచేసింది',
+ err:{401:'API కీ లేదు లేదా తప్పు.',402:'Gnani ఖాతాలో క్రెడిట్లు అయిపోయాయి.',403:'ఈ కీతో ఈ సేవను వాడలేరు.',429:'అభ్యర్థనలు ఎక్కువయ్యాయి. కొన్ని సెకన్లు ఆగండి.',missing_key:'సర్వర్‌లో API కీ సెట్ చేయలేదు.',504:'వాయిస్ సేవకు ఎక్కువ సమయం పట్టింది. మళ్లీ ప్రయత్నించండి.',NotAllowedError:'వాయిస్ వినడానికి "వినండి" బటన్ నొక్కండి.'},
+ errG:'వాయిస్ సేవ అందుబాటులో లేదు. టైప్ చేయవచ్చు.',noMic:'మైక్ అందుబాటులో లేదు. మైక్ అనుమతించండి లేదా టైప్ చేయండి.',empty:'ఏమీ వినిపించలేదు. మళ్లీ ప్రయత్నించండి లేదా టైప్ చేయండి.',srv:'సర్వర్‌ను చేరుకోలేకపోయాము. ఇంటర్నెట్ చూసి మళ్లీ ప్రయత్నించండి.'}};
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let S={lang:'te',started:false,profile:{},followup:null,results:[],say:'',noMatch:false,showAll:false,busy:false,draft:'',heard:false,proof:{stt:null,tts:null}};
+const t=k=>U[S.lang][k];
+const note=x=>{$('msg').textContent=x||''};
+function errText(e){const m=U[S.lang].err;return (e&&(m[e.error]||m[e.name]))||(e&&e.name==='TypeError'?t('srv'):t('errG'));}
+async function post(url,body){
+ const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+ if(!r.ok) throw await r.json().catch(()=>({error:r.status}));
+ return r;
+}
+
+// ---------- Timbre text-to-speech (audio comes from /api/tts) ----------
+const player=new Audio(),cache=new Map();let token=0;
+function chunks(text,max=300){
+ const parts=(String(text).match(/[^.!?।\n]+[.!?।]?/g)||[]).map(x=>x.trim()).filter(Boolean),out=[];let cur='';
+ for(const p of parts){if((cur+' '+p).length>max&&cur){out.push(cur);cur=p;}else cur=cur?cur+' '+p:p;}
+ if(cur)out.push(cur);return out.flatMap(c=>c.length>480?c.match(/.{1,480}/g):[c]);
+}
+async function speak(text){
+ const my=++token;player.pause();
+ for(const c of chunks(text)){
+  if(my!==token)return;
+  try{
+   const key=S.lang+'|'+c;let url=cache.get(key);
+   if(!url){
+    const t0=performance.now(),r=await post('/api/tts',{text:c,lang:S.lang});
+    url=URL.createObjectURL(await r.blob());cache.set(key,url);
+    S.proof.tts={ms:+r.headers.get('X-Elapsed-Ms')||Math.round(performance.now()-t0),model:r.headers.get('X-Model')||''};drawProof();
+   }
+   if(my!==token)return;
+   player.src=url;await player.play();
+   await new Promise(res=>{player.onended=res;player.onerror=res;});
+  }catch(e){note(errText(e));return;}
+ }
+}
+
+// ---------- Prisma speech-to-text (recording is converted to 16 kHz WAV, sent to /api/stt) ----------
+async function toWav(blob){
+ const ctx=new (window.AudioContext||window.webkitAudioContext)();
+ const dec=await ctx.decodeAudioData(await blob.arrayBuffer());ctx.close();
+ const rate=16000,off=new OfflineAudioContext(1,Math.ceil(dec.duration*rate),rate);
+ const src=off.createBufferSource();src.buffer=dec;src.connect(off.destination);src.start();
+ const d=(await off.startRendering()).getChannelData(0),v=new DataView(new ArrayBuffer(44+d.length*2));
+ const w=(o,s)=>[...s].forEach((c,i)=>v.setUint8(o+i,c.charCodeAt(0)));
+ w(0,'RIFF');v.setUint32(4,36+d.length*2,true);w(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);
+ v.setUint16(22,1,true);v.setUint32(24,rate,true);v.setUint32(28,rate*2,true);v.setUint16(32,2,true);
+ v.setUint16(34,16,true);w(36,'data');v.setUint32(40,d.length*2,true);
+ d.forEach((s,i)=>v.setInt16(44+i*2,Math.max(-1,Math.min(1,s))*0x7fff,true));
+ return v.buffer;
+}
+function b64(buf){let s='';const u=new Uint8Array(buf);for(let i=0;i<u.length;i+=0x8000)s+=String.fromCharCode.apply(null,u.subarray(i,i+0x8000));return btoa(s);}
+let rec,chunksA,timer;
+async function toggleRec(){
+ if(rec&&rec.state==='recording'){rec.stop();return;}
+ if(S.busy)return;
+ token++;player.pause();
+ try{
+  const st=await navigator.mediaDevices.getUserMedia({audio:true});
+  rec=new MediaRecorder(st);chunksA=[];
+  rec.ondataavailable=e=>chunksA.push(e.data);
+  rec.onstop=async()=>{clearTimeout(timer);st.getTracks().forEach(x=>x.stop());setMic(false);await transcribe(new Blob(chunksA,{type:rec.mimeType}));};
+  rec.start();setMic(true);timer=setTimeout(()=>rec.state==='recording'&&rec.stop(),20000);
+  note(t('micRec'));
+ }catch(e){note(t('noMic'));}
+}
+function setMic(on){const m=document.querySelector('.mic');if(m)m.classList.toggle('rec',on);}
+async function transcribe(blob){
+ S.busy=true;note('⏳ '+t('understanding'));
+ try{
+  const wav=await toWav(blob);
+  const j=await (await post('/api/stt',{audio:b64(wav),language:S.lang==='te'?'te-IN,en-IN':'en-IN,te-IN'})).json();
+  S.proof.stt={ms:j.ms,model:j.model};drawProof();
+  const txt=(j.transcript||'').trim();
+  if(!txt){note(t('empty'));}
+  else{const ta=$('txt');ta.value=txt;S.draft=txt;note(t('heard'));ta.focus();}
+ }catch(e){note(errText(e));}
+ S.busy=false;
+}
+
+// ---------- conversation ----------
+async function turn(text,opts={}){
+ S.busy=true;note('⏳ '+t('thinking'));
+ try{
+  const res=await (await post('/api/analyze',{text,profile:S.profile,asking:S.followup?S.followup.field:null,skip:!!opts.skip,lang:S.lang})).json();
+  S.profile=res.profile;S.followup=res.followup;S.results=res.results;S.say=res.say;S.noMatch=res.no_match;
+  S.showAll=!res.followup||!!opts.show;S.draft='';note('');S.busy=false;draw();
+  if(!opts.silent)speak(S.say);
+ }catch(e){S.busy=false;note(errText(e));}
+}
+function send(){const v=$('txt').value.trim();if(!v){$('txt').focus();return;}turn(v);}
+function relang(l){
+ S.lang=l;document.documentElement.lang=l;
+ document.querySelectorAll('.lang').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
+ if(S.started&&(S.results.length||S.followup||Object.keys(S.profile).length)&&S.profile.asked&&S.profile.asked.length+S.profile.needs.length>0){const keep=S.showAll;turn('',{silent:true,show:keep});}
+ else draw();
+}
+
+// ---------- screens ----------
+function profileChips(){
+ const p=S.profile,f=t('f'),a=[];
+ if(p.age)a.push(f.age+': '+p.age);
+ if(p.state)a.push(f[p.state]);
+ ['farmer','student','unemployed','female','rural','disability_mention','disability_cert','low_income','white_card','land_owner','crop_damage'].forEach(k=>{if(p[k]===true)a.push(f[k]);});
+ if(p.own_house===true)a.push(f.own_house);
+ return a.length?`<p class="small"><b>${t('understood')}:</b> ${a.map(x=>`<span class="tag">${esc(x)}</span>`).join('')}</p>`:'';
+}
+function drawTalk(){
+ const fu=S.followup;
+ if(!S.started){
+  $('talk').innerHTML=`<h1>${t('title')}</h1><p class="sub">${t('sub')}</p><p class="small">${t('priv')}</p>
+   <button class="primary wide" data-a="start">${t('start')}</button>
+   <p class="small" style="margin-top:18px">${t('examples')}</p><div class="chips">${t('ex').map((x,i)=>`<button class="chip" data-a="ex" data-i="${i}">${esc(x)}</button>`).join('')}</div>`;return;
+ }
+ const q=fu?fu.question:(S.results.length||S.say?'':t('first'));
+ const bubble=fu?fu.question:(S.say&&!S.results.length?S.say:'');
+ let h=profileChips();
+ if(fu||!S.results.length){
+  h+=`<div class="bubble" role="heading" aria-level="2">${esc(fu?fu.question:t('first'))}</div>
+   <div class="row"><button class="alt" data-a="listenq">${t('listen')}</button></div>`;
+  if(fu&&fu.options.length)h+=`<div class="row">${fu.options.map(o=>`<button class="alt" data-a="opt" data-v="${esc(o.value)}">${esc(o.label)}</button>`).join('')}</div>`;
+ }
+ h+=`<button class="mic" data-a="mic" aria-label="${esc(t('mic'))}">🎤</button><div class="mictxt">${t('mic')}</div>
+  <label for="txt" class="small">${t('type')}</label><textarea id="txt" rows="3"></textarea>
+  <div class="row"><button class="primary" data-a="send">${t('send')}</button>${fu&&fu.field!=='need'?`<button class="alt" data-a="skip">${t('skip')}</button>`:''}${fu&&S.results.length?`<button class="alt" data-a="show">${t('show')}</button>`:''}</div>`;
+ $('talk').innerHTML=h;$('txt').value=S.draft;$('txt').oninput=e=>{S.draft=e.target.value;};
+ $('txt').onkeydown=e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}};
+}
+function card(r,i){
+ const cls=r.status==='more_info_needed'?'more':r.status==='not_met'?'no':'';
+ const full=r.status!=='not_met';
+ return `<article class="card ${cls}"><span class="badge">${esc(r.status_label)}</span><h3>${esc(r.name)}</h3>
+  <div class="small">${esc(r.dept)} · ${esc(t('lv')[r.level]||'')}</div>
+  <b class="h">${t('who')}</b><div>${esc(r.purpose)}</div>
+  <b class="h">${t('ben')}</b><div>${esc(r.benefit)}</div>
+  ${full?`<b class="h">${t('why')}</b><ul>${r.why.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}
+  <details ${r.status==='more_info_needed'||!full?'open':''}><summary>${t('elig')}</summary><ul>${r.conditions.map(c=>`<li class="${c.state}">${esc(c.text)}</li>`).join('')}</ul></details>
+  ${full?`<b class="h">${t('docs')}</b><ul>${r.docs.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+  <b class="h">${t('apply')}</b><ol>${r.apply.map(x=>`<li>${esc(x)}</li>`).join('')}</ol>
+  <p class="small">${esc(r.verification_label)}. ${t('src')}: ${esc(r.source)}. ${t('lastv')}: ${esc(r.last_verified||t('nov'))}.${r.note?' '+t('note')+': '+esc(r.note):''}</p>
+  <div class="row"><button class="alt" data-a="say" data-i="${i}">${t('listen')}</button><a class="official" href="${esc(r.link)}" target="_blank" rel="noopener">${t('site')} ↗</a></div>`:''}</article>`;
+}
+function drawOut(){
+ if(!S.started||!S.showAll){$('out').innerHTML='';return;}
+ const R=S.results,main=R.map((r,i)=>[r,i]).filter(([r])=>r.status==='potentially_relevant'||r.status==='needs_verification'),
+  more=R.map((r,i)=>[r,i]).filter(([r])=>r.status==='more_info_needed'),no=R.map((r,i)=>[r,i]).filter(([r])=>r.status==='not_met');
+ let h='';
+ if(S.noMatch)h+=`<div class="bubble">${esc(t('none'))}</div>`;
+ if(main.length)h+=`<h2>${t('head')}</h2><div class="row"><button class="primary" data-a="all">${t('listenAll')}</button></div>`+main.map(([r,i])=>card(r,i)).join('');
+ if(more.length)h+=`<h2>${t('headMore')}</h2>`+more.map(([r,i])=>card(r,i)).join('');
+ if(no.length)h+=`<details><summary>${t('headNo')} (${no.length})</summary>${no.map(([r,i])=>card(r,i)).join('')}</details>`;
+ h+=`<p class="small">${t('disc')}</p><button class="alt wide" data-a="restart">${t('again')}</button>`;
+ $('out').innerHTML=h;
+}
+function drawProof(){
+ const p=S.proof,l=x=>x?`✔ ${t('pOk')} (${x.model||'—'}, ${(x.ms/1000).toFixed(1)} s)`:t('pNo');
+ $('proof').innerHTML=`<b>${t('provN')}:</b> ${t('pStt')}: ${l(p.stt)} · ${t('pTts')}: ${l(p.tts)}`;
+}
+function draw(){drawTalk();drawOut();drawProof();$('disc').textContent=t('disc');}
+
+document.addEventListener('click',e=>{
+ const l=e.target.closest('.lang');if(l){relang(l.dataset.lang);return;}
+ const b=e.target.closest('button');if(!b)return;const a=b.dataset.a;
+ if(a==='start'){S.started=true;draw();speak(t('first'));}
+ else if(a==='ex'){S.started=true;draw();$('txt').value=t('ex')[+b.dataset.i];S.draft=$('txt').value;send();}
+ else if(a==='mic')toggleRec();
+ else if(a==='send')send();
+ else if(a==='listenq')speak(S.followup?S.followup.question:t('first'));
+ else if(a==='opt'){turn(b.dataset.v==='yes'?t('yes'):b.dataset.v==='no'?t('no'):b.dataset.v);}
+ else if(a==='skip')turn('',{skip:true});
+ else if(a==='show'){S.showAll=true;drawOut();document.getElementById('out').scrollIntoView({behavior:'smooth'});speak(S.results.filter(r=>r.status==='potentially_relevant'||r.status==='needs_verification').map(r=>r.name).join('. '));}
+ else if(a==='say')speak(S.results[+b.dataset.i].speak);
+ else if(a==='all')speak(S.say+' '+S.results.filter(r=>r.status==='potentially_relevant'||r.status==='needs_verification').map(r=>r.speak).join(' '));
+ else if(a==='restart'){token++;player.pause();S={...S,started:false,profile:{},followup:null,results:[],say:'',noMatch:false,showAll:false,draft:''};note('');draw();}
+});
+draw();
+</script>
+</body>
+</html>
